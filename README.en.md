@@ -3,7 +3,7 @@
 > Persona-driven Claude Code skill library — workflows, cognitive patterns, multi-role collaboration.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
-[![Skills](https://img.shields.io/badge/Skills-22-green.svg)](#available-skills)
+[![Skills](https://img.shields.io/badge/Skills-23-green.svg)](#available-skills)
 [![Personas](https://img.shields.io/badge/Personas-8-purple.svg)](#persona-skills)
 [![Bilingual](https://img.shields.io/badge/Language-CN%20%2B%20EN-orange.svg)](#bilingual-support)
 
@@ -70,26 +70,26 @@ Each persona is a cognitive framework — not role-playing, but a way of thinkin
 
 ### Cognitive Patterns (18)
 
-| Pattern | Origin | Core Idea |
-|---------|--------|-----------|
-| Focus as Subtraction | Jobs | Value = deciding what NOT to do |
-| Proxy Skepticism | Bezos | Are metrics serving users or themselves? |
-| Speed Calibration | Bezos | Fast default; slow only for irreversible + high-magnitude |
-| Classification Instinct | Bezos | One-way door (irreversible) vs two-way door (reversible) |
-| Inversion Reflex | Munger | Don't ask "how to succeed" — ask "how would this fail?" |
-| Leverage Obsession | Grove | Find the 10x leverage point in every situation |
-| Paranoid Scanning | Grove | Only the paranoid survive — what could go wrong? |
-| Edge-case Paranoia | Beck | null? Empty array? Concurrent access? Race condition? |
-| Courage Accumulation | Beck | Small wins compound into confidence for bigger changes |
-| Subtraction Default | Rams | "As little design as possible" |
-| Hierarchy as Service | Rams | What should the user see first, second, third? |
-| Design for Trust | Rams | Honest, transparent, understandable products |
-| Temporal Depth | Fowler | Think in 6-month, 2-year, 5-year horizons |
-| People-first Sequencing | Horowitz | Who decides → what to decide → how to execute |
-| Wartime Awareness | Horowitz | Peacetime ≠ Wartime — adjust leadership style |
-| Willfulness as Strategy | Thiel | 0→1 requires doing what others won't |
-| First-principles Manufacturing | Musk | Cost = raw materials + labor, everything else is optimizable |
-| Meta-learning Compound | Altman | Learning how to learn compounds faster than any skill |
+| # | Pattern | Origin | Core Idea |
+|---|---------|--------|-----------|
+| 1 | Classification instinct | Bezos | Categorize by reversibility × magnitude (one-way/two-way doors) |
+| 2 | Inversion reflex | Munger | For every "how do we win?" ask "what would make us fail?" |
+| 3 | Speed calibration | Bezos | Fast is default; slow only for irreversible + high-magnitude |
+| 4 | Courage accumulation | — | Confidence comes FROM making hard decisions, not before them |
+| 5 | Focus as subtraction | Jobs | Primary value-add is what NOT to do (350 → 10 products) |
+| 6 | Proxy skepticism | Bezos | Are metrics still serving users or self-referential? |
+| 7 | Leverage obsession | Altman | Find the input where small effort creates massive output |
+| 8 | Willfulness as strategy | Altman | World yields to people who push hard enough, long enough |
+| 9 | People-first sequencing | Horowitz | People, products, profits — always in that order |
+| 10 | Narrative coherence | — | Hard decisions need clear framing; make the "why" legible |
+| 11 | Wartime awareness | Horowitz | Correctly diagnose peacetime vs wartime |
+| 12 | Founder-mode bias | Chesky/Graham | Deep involvement ≠ micromanagement if it expands team thinking |
+| 13 | Hierarchy as service | Rams | What should the user see first, second, third? |
+| 14 | Subtraction default | Rams | "As little design as possible" — cut what doesn't earn its pixels |
+| 15 | Edge-case paranoia | — | 47-char name? Zero results? Network fails mid-action? Empty states are features |
+| 16 | Design for trust | — | Every interface decision either builds or erodes trust |
+| 17 | Paranoid scanning | Grove | Scan for inflection points, cultural drift, process-as-proxy disease |
+| 18 | Temporal depth | Bezos | Think in 5-10 year arcs; regret minimization framework |
 
 ### Reference & Meta Skills
 
