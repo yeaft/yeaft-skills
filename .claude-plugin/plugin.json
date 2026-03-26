@@ -1,0 +1,22 @@
+{
+  "name": "yeaft-skills",
+  "description": "Yeaft Skills — Persona 驱动的 Claude Code 技能库：工作流、认知模式、多角色协作",
+  "version": "0.1.0",
+  "author": {
+    "name": "YiHe",
+    "email": "122829105@qq.com"
+  },
+  "homepage": "https://github.com/yeaft/yeaft-skills",
+  "repository": "https://github.com/yeaft/yeaft-skills",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "personas",
+    "workflows",
+    "cognitive-patterns",
+    "brainstorming",
+    "code-review",
+    "tdd",
+    "subagent"
+  ]
+}
