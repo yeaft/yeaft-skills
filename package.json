@@ -1,0 +1,18 @@
+{
+  "name": "yeaft-skills",
+  "version": "0.1.0",
+  "description": "Yeaft Skills — Persona 驱动的 Claude Code 技能库",
+  "license": "MIT",
+  "author": "YiHe <122829105@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yeaft/yeaft-skills.git"
+  },
+  "keywords": [
+    "claude-code",
+    "skills",
+    "personas",
+    "workflows",
+    "cognitive-patterns"
+  ]
+}

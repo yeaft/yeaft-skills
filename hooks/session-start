@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+# SessionStart hook for yeaft-skills plugin
+# Adapted from github.com/obra/superpowers (MIT License)
+
+set -euo pipefail
+
+# Determine plugin root directory
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PLUGIN_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
+
+# Language detection: Chinese locale → SKILL.md, otherwise → SKILL.en.md (fallback to SKILL.md)
+skill_file="${PLUGIN_ROOT}/skills/using-yeaft/SKILL.md"
+case "${LANG:-}" in
+  zh_CN*|zh_TW*|zh_HK*|zh.*)
+    skill_file="${PLUGIN_ROOT}/skills/using-yeaft/SKILL.md"
+    ;;
+  *)
+    if [ -f "${PLUGIN_ROOT}/skills/using-yeaft/SKILL.en.md" ]; then
+      skill_file="${PLUGIN_ROOT}/skills/using-yeaft/SKILL.en.md"
+    fi
+    ;;
+esac
+
+# Read entry skill content
+skill_content=$(cat "$skill_file" 2>&1 || echo "Error reading yeaft entry skill")
+
+# Escape string for JSON embedding using bash parameter substitution.
+# Each ${s//old/new} is a single C-level pass — orders of magnitude
+# faster than character-by-character loops.
+escape_for_json() {
+    local s="$1"
+    s="${s//\\/\\\\}"
+    s="${s//\"/\\\"}"
+    s="${s//$'\n'/\\n}"
+    s="${s//$'\r'/\\r}"
+    s="${s//$'\t'/\\t}"
+    printf '%s' "$s"
+}
+
+escaped=$(escape_for_json "$skill_content")
+context="<EXTREMELY_IMPORTANT>\nYou have yeaft skills.\n\n**以下是你的 'yeaft:using-yeaft' 技能 — 技能入口。其他技能请使用 Skill tool 加载：**\n\n${escaped}\n</EXTREMELY_IMPORTANT>"
+
+# Output context injection as JSON.
+# Cursor hooks expect additional_context.
+# Claude Code hooks expect hookSpecificOutput.additionalContext.
+# Claude Code reads BOTH fields without deduplication, so we must only
+# emit the field consumed by the current platform to avoid double injection.
+#
+# Uses printf instead of heredoc (cat <<EOF) to work around a bash 5.3+
+# bug where heredoc variable expansion hangs when content exceeds ~512 bytes.
+if [ -n "${CURSOR_PLUGIN_ROOT:-}" ]; then
+  # Cursor sets CURSOR_PLUGIN_ROOT (may also set CLAUDE_PLUGIN_ROOT) — emit additional_context
+  printf '{\n  "additional_context": "%s"\n}\n' "$context"
+elif [ -n "${CLAUDE_PLUGIN_ROOT:-}" ]; then
+  # Claude Code sets CLAUDE_PLUGIN_ROOT — emit only hookSpecificOutput
+  printf '{\n  "hookSpecificOutput": {\n    "hookEventName": "SessionStart",\n    "additionalContext": "%s"\n  }\n}\n' "$context"
+else
+  # Other platforms — emit additional_context as fallback
+  printf '{\n  "additional_context": "%s"\n}\n' "$context"
+fi
+
+exit 0

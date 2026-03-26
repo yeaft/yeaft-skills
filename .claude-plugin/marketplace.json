@@ -1,0 +1,20 @@
+{
+  "name": "yeaft-skills-dev",
+  "description": "Yeaft Skills 开发市场 — Persona 驱动的技能库",
+  "owner": {
+    "name": "YiHe",
+    "email": "122829105@qq.com"
+  },
+  "plugins": [
+    {
+      "name": "yeaft-skills",
+      "description": "Persona 驱动的 Claude Code 技能库：工作流、认知模式、多角色协作",
+      "version": "0.1.0",
+      "source": "./",
+      "author": {
+        "name": "YiHe",
+        "email": "122829105@qq.com"
+      }
+    }
+  ]
+}
