@@ -1,0 +1,17 @@
+#!/bin/bash
+# Install yeaft-skills to ~/.claude/skills/
+# Usage: curl -fsSL https://raw.githubusercontent.com/yeaft/yeaft-skills/main/setup | bash
+
+set -euo pipefail
+
+DEST="$HOME/.claude/skills/yeaft-skills"
+
+if [ -d "$DEST" ]; then
+  echo "Updating yeaft-skills..."
+  cd "$DEST" && git pull
+else
+  echo "Installing yeaft-skills..."
+  git clone https://github.com/yeaft/yeaft-skills.git "$DEST"
+fi
+
+echo "Done. yeaft-skills installed at $DEST"
