@@ -17,7 +17,7 @@ If you think there is even a 1% chance a skill might apply, you ABSOLUTELY MUST 
 | `yeaft:brainstorming` | Before any creative work — features, components, designs |
 | `yeaft:writing-plans` | When creating implementation plans |
 | `yeaft:subagent-development` | When executing plans with independent tasks |
-| `yeaft:code-review` | When reviewing code changes (pre-landing review) |
+| `yeaft:review-code` | When reviewing code changes (pre-landing review) |
 | `yeaft:office-hours` | When defining requirements or writing design docs |
 | `yeaft:ceo-review` | When reviewing plans from a strategic/product perspective |
 | `yeaft:design-review` | When auditing UI/UX design decisions |
@@ -49,7 +49,7 @@ If you think there is even a 1% chance a skill might apply, you ABSOLUTELY MUST 
 
 1. **Process skills first** (brainstorming, debugging) — determine HOW to approach
 2. **Persona skills** (when a specific perspective is needed)
-3. **Implementation skills** (code-review, tdd) — guide execution
+3. **Implementation skills** (review-code, tdd) — guide execution
 
 ## Red Flags
 

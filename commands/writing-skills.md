@@ -95,7 +95,7 @@ skills/
 可复用的工作流程。目录：`skills/<skill-name>/`
 
 ```yaml
-name: code-review
+name: review-code
 description: 当审查代码变更、准备提交前审查时使用
 ```
 

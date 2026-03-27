@@ -1,5 +1,5 @@
 ---
-name: code-review
+name: review-code
 description: |
   代码审查。两轮 review：Pass 1 架构审查（Fowler persona），Pass 2 代码质量审查
   （Torvalds persona）。支持 fix-first 原则和范围漂移检测。

@@ -95,7 +95,7 @@ Every skill must provide two files:
 Reusable workflow processes. Directory: `skills/<skill-name>/`
 
 ```yaml
-name: code-review
+name: review-code
 description: Use when reviewing code changes or preparing pre-landing review
 ```
 

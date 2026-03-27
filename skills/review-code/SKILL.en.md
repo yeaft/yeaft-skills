@@ -1,5 +1,5 @@
 ---
-name: code-review
+name: review-code
 description: |
   Code review. Two-pass review: Pass 1 architecture review (Fowler persona),
   Pass 2 code quality review (Torvalds persona). Supports fix-first principle
