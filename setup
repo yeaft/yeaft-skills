@@ -1,28 +1,18 @@
 #!/bin/bash
-# Install yeaft-skills + websearch MCP plugin
+# Install yeaft-skills plugin
 # Usage: curl -fsSL https://raw.githubusercontent.com/yeaft/yeaft-skills/main/setup | bash
 
 set -euo pipefail
 
 echo "=== Installing yeaft-skills ==="
 claude plugin install yeaft-skills@yeaft-skills-dev 2>/dev/null || {
-  # Fallback: register marketplace first, then install
-  echo "Registering yeaft-skills-dev marketplace..."
-  # Add marketplace via settings if claude plugin marketplace isn't available
   claude plugin install https://github.com/yeaft/yeaft-skills 2>/dev/null || true
 }
 
 echo ""
-echo "=== Installing websearch MCP ==="
-claude plugin install websearch@yeaft-skills-dev
-
-echo ""
 echo "=== Verifying ==="
-claude plugin list 2>/dev/null | grep -E "yeaft-skills|websearch" || true
+claude plugin list 2>/dev/null | grep -E "yeaft-skills" || true
 
 echo ""
 echo "✅ Done! Next time you start Claude Code you'll have:"
 echo "   - yeaft-skills (personas, workflows, cognitive patterns)"
-echo "   - web_search tool (Google/Bing via Playwright)"
-echo ""
-echo "Note: websearch requires Node.js >= 20 and will install Chromium on first run."

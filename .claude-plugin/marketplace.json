@@ -1,6 +1,6 @@
 {
   "name": "yeaft-skills-dev",
-  "description": "Yeaft Skills 开发市场 — Persona 驱动的技能库 + Web Search MCP",
+  "description": "Yeaft Skills 开发市场 — Persona 驱动的技能库",
   "owner": {
     "name": "YiHe",
     "email": "122829105@qq.com"
@@ -14,15 +14,6 @@
       "author": {
         "name": "YiHe",
         "email": "122829105@qq.com"
-      }
-    },
-    {
-      "name": "websearch",
-      "description": "Web search MCP tool — Playwright 无头浏览器搜索 Google/Bing，无需 API key",
-      "version": "0.1.0",
-      "source": {
-        "source": "github",
-        "repo": "yeaft/websearch"
       }
     }
   ]
